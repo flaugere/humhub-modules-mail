@@ -80,7 +80,7 @@ use humhub\compat\CActiveForm;
 
                         <?php if ($entry->created_by == Yii::$app->user->id): ?>
                             <div class="pull-right">
-                                <?php echo Html::a('<i class="fa fa-pencil-square-o"></i>', ["/mail/mail/edit-entry", 'messageEntryId' => $entry->id], array('data-target' => '#globalModal', 'class' => '')); ?>
+                                <?php //echo Html::a('<i class="fa fa-pencil-square-o"></i>', ["/mail/mail/edit-entry", 'messageEntryId' => $entry->id], array('data-target' => '#globalModal', 'class' => '')); ?>
                             </div>
                         <?php endif; ?>
 
