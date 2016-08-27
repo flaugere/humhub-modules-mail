@@ -60,7 +60,7 @@ class Events extends \yii\base\Object
             'url' => Url::to(['/mail/mail/index']),
             'icon' => '<i class="fa fa-envelope"></i>',
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'mail'),
-            'sortOrder' => 300,
+            'sortOrder' => 500,
         ));
     }
 
@@ -80,7 +80,7 @@ class Events extends \yii\base\Object
         if(version_compare(Yii::$app->version, '1.1', '>=')) {
             $permitted = $profileUser->getPermissionManager()->can(new SendMail()) || (!Yii::$app->user->isGuest && Yii::$app->user->isAdmin());
         }
-        
+
         if (Yii::$app->user->isGuest || $profileUser->id == Yii::$app->user->id || !$permitted) {
             return;
         }
