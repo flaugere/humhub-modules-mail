@@ -72,6 +72,20 @@ class Message extends ActiveRecord
         return $query;
     }
 
+    /**
+     * Get one interlocutor for an user
+     * @param  int $userId
+     *
+     * @return User[]
+     */
+    public function getInterlocutorFor($userId)
+    {
+        return $this->hasMany(User::className(), ['id' => 'user_id'])
+                ->viaTable('user_message', ['message_id' => 'id'])
+                ->andWhere(['<>', 'user.id', $userId])
+                ->one();
+    }
+
     public function getUsers()
     {
         return $this->hasMany(User::className(), ['id' => 'user_id'])
