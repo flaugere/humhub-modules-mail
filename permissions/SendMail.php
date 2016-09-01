@@ -23,7 +23,7 @@ class SendMail extends \humhub\libs\BasePermission
     public $defaultAllowedGroups = [
         User::USERGROUP_USER
     ];
-    
+
     /**
      * @inheritdoc
      */
@@ -38,7 +38,7 @@ class SendMail extends \humhub\libs\BasePermission
                 return self::STATE_DENY;
             }
         }
-        
+
         return parent::getDefaultState($groupId);
     }
 
@@ -52,12 +52,12 @@ class SendMail extends \humhub\libs\BasePermission
     /**
      * @inheritdoc
      */
-    protected $title = "Send Mail";
+    protected $title = "Messages";
 
     /**
      * @inheritdoc
      */
-    protected $description = "Allows the user to send mails";
+    protected $description = "Autoriser les autres membres à m'envoyer un message";
 
     /**
      * @inheritdoc
